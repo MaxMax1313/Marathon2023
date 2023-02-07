@@ -1,5 +1,18 @@
 package day9.Task2;
 
+class Task2{
+    public static void main(String[] args) {
+        Triangle t1 = new Triangle("Red", 10, 10, 10);
+        Triangle t2 = new Triangle("Red", 20, 15, 10);
+        Rectangle r1 =   new Rectangle("Red", 10, 5);
+        Circle c1 = new Circle("Red", 4);
+        Circle c2 = new Circle("Red", 10);
+
+
+        System.out.println( t1.perimeter()+t2.perimeter()+ r1.perimeter()+c1.perimeter()+ c2.perimeter());
+
+    }
+}
 public abstract class Figure {
     private String color;
 
@@ -78,3 +91,4 @@ class Triangle extends Figure{
         return side1+side2+side3;
     }
 }
+
