@@ -2,15 +2,17 @@ package day11.task1;
 
 public class Courier implements Worker {
     private int salary;
-    private int isPayed;
+    private boolean isPayed;
     Warehouse warehouse;
+    int count;
+
 
 
     public int getSalary() {
         return salary;
     }
 
-    public int getIsPayed() {
+    public boolean getIsPayed() {
         return isPayed;
     }
 
@@ -19,7 +21,7 @@ public class Courier implements Worker {
         return "Заработная плата КУРЬЕРА : " + salary + " Бонус выплачен: " + isPayed;
     }
 
-    public Courier(int salary, int isPayed, Warehouse warehouse) {
+    public Courier(int salary, boolean isPayed, Warehouse warehouse) {
         this.salary = salary;
         this.isPayed = isPayed;
         this.warehouse = warehouse;
@@ -31,8 +33,12 @@ public class Courier implements Worker {
         warehouse.countDeliveredOrders+=1;
     }
 
+
     @Override
     public void bonus() {
+        if(salary>=10000){
+            salary+=50000;
+        }
 
     }
 }
