@@ -1,17 +1,37 @@
 package day11.task1;
 
 public class Task1 {
-    public static void main(String[] args) {
-        Warehouse w = new Warehouse();
-        Courier c = new Courier(0,false, w);
 
-        for (int i = 0; i <100; i++) {
-            c.doWork();
+
+    static void businessProcess(Worker worker) {
+        for (int i = 0; i < 10000; i++) {
+            worker.doWork();
         }
-        System.out.println(c.getSalary());
-        System.out.println(w.countDeliveredOrders);
-        c.bonus();
-        System.out.println(c.getSalary());
+        worker.bonus();
+    }
+
+    public static void main(String[] args) {
+
+        Warehouse warehouse = new Warehouse();
+        Worker worker = new Courier(0,false,warehouse);
+        Worker worker1 = new Picker(0,false,warehouse);
+
+        businessProcess(worker1);
+        businessProcess(worker);
+
+        System.out.println(warehouse);
+        worker.showSalary();
+        worker1.showSalary();
+
+        Warehouse warehouse1 = new Warehouse();
+        Worker worker2 = new Courier(0,false,warehouse1);
+        Worker worker3 = new Picker(0,false,warehouse1);
+        businessProcess(worker2);
+        businessProcess(worker3);
+        System.out.println(warehouse);
+
+
+
 
     }
 }
