@@ -1,61 +1,55 @@
 package day11.task1;
 
 public class Courier implements Worker {
-    int salary;
-    boolean isPayed;
-    Warehouse warehouse;
-    int count;
-    static int Sumsalary;
+    private int salary;
+    private final int FIX_SALARY=100;
+    private boolean isPayed;
+    Warehouse w;
 
+    Courier(Warehouse w){
+        this.w=w;
+    }
 
     public int getSalary() {
         return salary;
     }
-
-    public boolean getIsPayed() {
+    public boolean isPayed() {
         return isPayed;
     }
 
     @Override
     public String toString() {
-        return "Заработная плата КУРЬЕРА : " + salary + " Бонус выплачен: " + isPayed;
-    }
-
-    public Courier(int salary, boolean isPayed, Warehouse warehouse) {
-        this.salary = salary;
-        this.isPayed = isPayed;
-        this.warehouse = warehouse;
+        return "Courier{" +
+                "salary=" + salary +
+                ", isPayed=" + isPayed +
+                '}';
     }
 
     @Override
     public void doWork() {
-        salary += 100;
-        warehouse.countDeliveredOrders += 1;
-        Sumsalary += 100;
+        salary+=FIX_SALARY;
+        w.DeliverDone();
 
     }
 
-
     @Override
     public void bonus() {
-        if (Sumsalary == 1000000) {
-            salary += 50000;
-        } else if (Sumsalary < 1000000) {
-            System.out.println("Бонус пока не доступен");
-        } else {
-            System.out.println("Бонус уже был выплачен");
+        if(isPayed){
+            System.out.println("Бонус уже был выплачен.");
+            return;
+        }
+        else if(w.getCountDeliveredOrders()>=10000){
+            salary+=50000;
+            isPayed=true;
+        }
+        else {
+            System.out.println("Бонус пока не доступен.");
         }
 
     }
 
     @Override
-    public void showSalary() {
+    public void showInfo() {
         System.out.println(salary);
-    }
-
-    @Override
-    public void showSUMsalary() {
-        System.out.println(Sumsalary);
-
     }
 }
