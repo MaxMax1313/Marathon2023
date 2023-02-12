@@ -1,19 +1,10 @@
 package day11.task2;
 
-public class Warrior extends Hero implements PhysAttack {
+public class Warrior extends Hero {
 
-
-    double physDef;
-    double magicDef;
-    int physAtt;
-
-
-
-    public Warrior() {
-        ;
-        this.physDef = 0.8;
-        this.magicDef = 0;
-        this.physAtt = 30;
+    Warrior() {
+        physDef = 0.8;
+        physAtt = 30;
     }
 
     @Override
@@ -26,8 +17,4 @@ public class Warrior extends Hero implements PhysAttack {
                 '}';
     }
 
-    @Override
-    public void physicalAttack(Hero hero) {
-        hero.health-=physAtt;
-    }
 }
