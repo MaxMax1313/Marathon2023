@@ -9,10 +9,12 @@ public class MusicBand {
     public String name;
     int year;
 
+
     MusicBand(String name, int year) {
         this.name = name;
         this.year = year;
     }
+
 
     @Override
     public String toString() {

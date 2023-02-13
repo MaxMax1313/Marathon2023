@@ -8,12 +8,14 @@ public class MusicBand {
 
     String name;
     int year;
+    public List <String> artistsNames;
 
-    String artist;
 
-    MusicBand(String name, int year) {
+    MusicBand(String name, int year, List<String>artistsNames) {
         this.name = name;
         this.year = year;
+        this.artistsNames = artistsNames;
+
     }
 
     @Override
@@ -21,23 +23,40 @@ public class MusicBand {
         return "MusicBand{" +
                 "name='" + name + '\'' +
                 ", year=" + year +
+                ", artistsNames=" + artistsNames +
                 '}';
     }
 
+    public static void transferMembers(MusicBand musicBand1, MusicBand musicBand2){
+        List <String>array = new ArrayList<>(musicBand1.artistsNames);
+     musicBand1.artistsNames=musicBand2.artistsNames;
+        musicBand2.artistsNames = array;
 
+
+
+    }
 
     public static void main(String[] args) {
         List<MusicBand> array = new ArrayList<>();
-        MusicBand musicBand1 = new MusicBand("Nirvana", 1967);
-        MusicBand musicBand2 = new MusicBand("KINO", 1980);
-        MusicBand musicBand3 = new MusicBand("Wu-tang", 2001);
-        MusicBand musicBand4 = new MusicBand("TATU", 2005);
-        MusicBand musicBand5 = new MusicBand("AC/DC", 1975);
-        MusicBand musicBand6 = new MusicBand("Limp Bizkit", 2003);
-        MusicBand musicBand7 = new MusicBand("Led Zeppelin", 1966);
-        MusicBand musicBand8 = new MusicBand("Krovostok", 2006);
-        MusicBand musicBand9 = new MusicBand("Sector gaza", 1979);
-        MusicBand musicBand10 = new MusicBand("DDT", 1970);
+        List<String> artistsName = new ArrayList<>();
+        artistsName.add("VAlera");
+        artistsName.add("MAx");
+
+        List <String> artist2 = new ArrayList<>();
+        artist2.add("OLOLOL");
+        artist2.add("ZOZOZOOZOZ");
+
+
+        MusicBand musicBand1 = new MusicBand("Nirvana", 1967,artistsName);
+        MusicBand musicBand2 = new MusicBand("KINO", 1980,artist2);
+        MusicBand musicBand3 = new MusicBand("Wu-tang", 2001,artistsName);
+        MusicBand musicBand4 = new MusicBand("TATU", 2005,artistsName);
+        MusicBand musicBand5 = new MusicBand("AC/DC", 1975,artistsName);
+        MusicBand musicBand6 = new MusicBand("Limp Bizkit", 2003,artistsName);
+        MusicBand musicBand7 = new MusicBand("Led Zeppelin", 1966,artistsName);
+        MusicBand musicBand8 = new MusicBand("Krovostok", 2006,artistsName);
+        MusicBand musicBand9 = new MusicBand("Sector gaza", 1979,artistsName);
+        MusicBand musicBand10 = new MusicBand("DDT", 1970,artistsName);
 
 
         array.add(musicBand1);
@@ -53,10 +72,14 @@ public class MusicBand {
 
 
         System.out.println(array);
-        Collections.shuffle(array);
+
+    transferMembers(musicBand1,musicBand2);
+
         System.out.println(array);
-        System.out.println(array.get(5));
-        array.add();
+
+
+
+
 
 
     }
