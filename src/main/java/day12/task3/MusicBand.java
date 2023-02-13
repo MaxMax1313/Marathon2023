@@ -4,26 +4,25 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Task3 {
-    MusicBand musicBand;
+public class MusicBand {
 
-    public static List<MusicBand> groupsAfter2000(List<MusicBand> bands){
-        List <MusicBand> groupsAfter2000 = new ArrayList<>();
-        for(MusicBand s :bands){
-            if(s.year>=2000){
-                groupsAfter2000.add(s);
+    public String name;
+    int year;
 
-            }
+    MusicBand(String name, int year) {
+        this.name = name;
+        this.year = year;
+    }
 
-        }
-
-        return groupsAfter2000;
-
-
+    @Override
+    public String toString() {
+        return "MusicBand{" +
+                "name='" + name + '\'' +
+                ", year=" + year +
+                '}';
     }
 
     public static void main(String[] args) {
-
         List<MusicBand> array = new ArrayList<>();
         MusicBand musicBand1 = new MusicBand("Nirvana", 1967);
         MusicBand musicBand2 = new MusicBand("KINO", 1980);
@@ -36,6 +35,7 @@ public class Task3 {
         MusicBand musicBand9 = new MusicBand("Sector gaza", 1979);
         MusicBand musicBand10 = new MusicBand("DDT", 1970);
 
+
         array.add(musicBand1);
         array.add(musicBand2);
         array.add(musicBand3);
@@ -47,13 +47,13 @@ public class Task3 {
         array.add(musicBand9);
         array.add(musicBand10);
 
+
+        System.out.println(array);
         Collections.shuffle(array);
         System.out.println(array);
-        System.out.println(groupsAfter2000(array));
-
-
-
 
 
     }
+
+
 }
