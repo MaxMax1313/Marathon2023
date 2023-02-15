@@ -10,10 +10,6 @@ public class Task2 {
         arraySORT(0,30,array);
         System.out.println(array);
 
-
-
-
-
     }
 
     public  static void arraySORT(int a, int b, List<Integer> array){

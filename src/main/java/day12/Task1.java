@@ -13,7 +13,7 @@ public class Task1 {
         arrayList.add("LADA");
         arrayList.add("Porsche");
         arrayList.add("Peugeot");
-        arrayList.add(arrayList.size()/2,"VOLVO");
+        arrayList.add(2,"VOLVO");
         arrayList.remove(0);
         System.out.println(arrayList);
 

@@ -10,7 +10,7 @@ public class Task3 {
     public static List<MusicBand> groupsAfter2000(List<MusicBand> bands){
         List <MusicBand> groupsAfter2000 = new ArrayList<>();
         for(MusicBand s :bands){
-            if(s.year>=2000){
+            if(s.getYear()>2000){
                 groupsAfter2000.add(s);
 
             }
@@ -24,7 +24,7 @@ public class Task3 {
 
     public static void main(String[] args) {
 
-        List<MusicBand> array = new ArrayList<>();
+
         MusicBand musicBand1 = new MusicBand("Nirvana", 1967);
         MusicBand musicBand2 = new MusicBand("KINO", 1980);
         MusicBand musicBand3 = new MusicBand("Wu-tang", 2001);
@@ -36,6 +36,7 @@ public class Task3 {
         MusicBand musicBand9 = new MusicBand("Sector gaza", 1979);
         MusicBand musicBand10 = new MusicBand("DDT", 1970);
 
+        List<MusicBand> array = new ArrayList<>();
         array.add(musicBand1);
         array.add(musicBand2);
         array.add(musicBand3);
@@ -50,10 +51,7 @@ public class Task3 {
         Collections.shuffle(array);
         System.out.println(array);
         System.out.println(groupsAfter2000(array));
-
-
-
-
+        System.out.println(array);
 
     }
 }

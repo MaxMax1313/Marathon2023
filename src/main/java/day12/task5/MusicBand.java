@@ -31,13 +31,13 @@ public class MusicBand {
     }
 
     public  static void transferMembers(MusicBand musicBand1,MusicBand musicBand2){
-        musicBand1.artists.add((Artists) musicBand2.artists);
+        for(Artists s : musicBand1.artists){
+            musicBand2.artists.add(s);
+        }
+        musicBand1.artists.clear();
     }
-    public static void print(MusicBand musicBand){
-        System.out.println(musicBand.artists);
-
-
-
+    public void print1(){
+        System.out.println(this.artists);
     }
 
     public static void main(String[] args) {
@@ -45,26 +45,26 @@ public class MusicBand {
         List <Artists> artist =new ArrayList<>();
         artist.add(new Artists("VAlera", 55));
         artist.add(new Artists("VIKTOR TSOY", 70));
+         List<Artists> artists1 = new ArrayList<>();
+         artists1.add(new Artists("TOPOR", 15));
+         artists1.add(new Artists("SUZKI",45));
 
 
 
 
 
         MusicBand musicBand1 = new MusicBand("Nirvana", 1967,artist);
-        MusicBand musicBand2 = new MusicBand("KINO", 1980, artist);
-        MusicBand musicBand3 = new MusicBand("Wu-tang", 2001, artist);
-        MusicBand musicBand4 = new MusicBand("TATU", 2005, artist);
-        MusicBand musicBand5 = new MusicBand("AC/DC", 1975, artist);
-        MusicBand musicBand6 = new MusicBand("Limp Bizkit", 2003, artist);
-        MusicBand musicBand7 = new MusicBand("Led Zeppelin", 1966, artist);
-        MusicBand musicBand8 = new MusicBand("Krovostok", 2006, artist);
-        MusicBand musicBand9 = new MusicBand("Sector gaza", 1979, artist);
-        MusicBand musicBand10 = new MusicBand("DDT", 1970, artist);
+        MusicBand musicBand2 = new MusicBand("KINO", 1980, artists1);
+
 
 
         System.out.println(musicBand1);
-        transferMembers(musicBand1, musicBand2);
-        print(musicBand1);
+        System.out.println(musicBand2);
+        transferMembers(musicBand1,musicBand2);
+        musicBand1.print1();
+        musicBand2.print1();
+
+
 
 
 

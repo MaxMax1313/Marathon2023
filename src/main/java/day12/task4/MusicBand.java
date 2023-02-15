@@ -29,17 +29,20 @@ public class MusicBand {
 
     public static void transferMembers(MusicBand musicBand1, MusicBand musicBand2) {
 
-        musicBand2.artistsNames.add(musicBand1.artistsNames.toString());
+       for(String s : musicBand1.artistsNames){
+           musicBand2.artistsNames.add(s);
+       }
+       musicBand1.artistsNames.clear();
+
 
     }
 
-    public static void printMembers(MusicBand musicBand){
-        System.out.println(musicBand.artistsNames);
+    public void printMembers(){
+        System.out.println(this.artistsNames);
+
     }
 
-    public String getMembers(){
-        return artistsNames.toString();
-    }
+
 
     public static void main(String[] args) {
         List<MusicBand> array = new ArrayList<>();
@@ -82,9 +85,9 @@ public class MusicBand {
 
         System.out.println(array);
 
-        printMembers(musicBand2);
+        musicBand2.printMembers();
 
-        System.out.println(musicBand2.getMembers());
+
     }
 
 
