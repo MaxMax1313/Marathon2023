@@ -8,7 +8,10 @@ public class MessageDatabase {
 
 
     public static void addNewMessage(User u1, User u2, String text) {
-        messages.add(new Message(u1, u2, text));
+
+        messages.add(new Message(u1,u2,text));
+
+
     }
 
     public static List<Message> getMessages() {
@@ -16,6 +19,13 @@ public class MessageDatabase {
     }
 
     public static void showDialog(User u1, User u2) {
-        System.out.println(messages);
-    }
-}
+     for(Message s: messages){
+         if((s.getSender() == u1 && s.getReceiver()==u2)||(s.getSender() == u2 && s.getReceiver()==u1)) {
+             System.out.println(s.getSender() + " "+ s.getText());
+         }
+     }
+        }
+
+        }
+
+

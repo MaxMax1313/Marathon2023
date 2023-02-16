@@ -33,11 +33,8 @@ public class Message {
 
     @Override
     public String toString() {
-        return "Message{" +
-                "FROM: " + sender +
-                ", TO: " + receiver +
-                ", ON: " + date +
-                ", Текст сообщения: " + text + '\'' +
-                '}';
+        return "FROM: " + sender + "\n"+
+                "TO: " + receiver + "\n" +
+              text + "\n";
     }
 }
