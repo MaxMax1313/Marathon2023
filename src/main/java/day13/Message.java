@@ -34,7 +34,7 @@ public class Message {
     @Override
     public String toString() {
         return "FROM: " + sender + "\n"+
-                "TO: " + receiver + "\n" +
+                "TO: " + receiver + "\nON: " + date + "\n"+
               text + "\n";
     }
 }
