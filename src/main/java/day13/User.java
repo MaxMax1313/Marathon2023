@@ -39,6 +39,9 @@ public class User {
         return this.isSubscribed(user) && user.isSubscribed(this);
     }
 
-    public void sendMessage(User user, String text){}
+    public void sendMessage(User user, String text){
+    MessageDatabase.addNewMessage(this,user,text);
+    }
+
 
 }

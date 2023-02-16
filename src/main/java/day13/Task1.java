@@ -8,20 +8,15 @@ public class Task1 {
 
 
         User user1 = new User("Max");
-        User user2 =new User("Ivan");
-        System.out.println(user1.getSubscriptions());
+        User user2 = new User("Ivan");
+        User user3 = new User("Masha");
+
+        user1.sendMessage(user2, "Privet brodyaga");
+        user1.sendMessage(user2, "Kak y vas pogoda?");
+        user2.sendMessage(user1,"Privet, dolbaeb vse horosho");
 
 
-        user1.subscribe(user2);
-        user2.subscribe(user1);
-
-        System.out.println(user2.isSubscribed(user1));
-        System.out.println(user1.isSubscribed(user2));
-        System.out.println(user1.isFriend(user2));
-        System.out.println(user2.isFriend(user1));
-
-
-
+        MessageDatabase.showDialog(user1,user2);
 
 
     }
