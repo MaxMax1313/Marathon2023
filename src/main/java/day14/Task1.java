@@ -17,29 +17,23 @@ public class Task1 {
         try {Scanner scanner = new Scanner(file);
             String line = scanner.nextLine();
             String[] numbers = line.split(" ");
-            int [] nums = new int[10];
-            int count=0;
+
+            if(numbers.length!=10){
+                throw new IllegalArgumentException();
+            }
+
             int summ = 0;
             for (String number : numbers) {
-                nums[count++] = Integer.parseInt(number);
+                summ+=Integer.parseInt(number);
             }
-            if(count<10){try {
-                throw  new IOException();
-            }
-            catch (IOException e){
-                System.out.println("Некорректный входной файл");
-            }
-
-            }
-            else { for (int i = 0; i < nums.length; i++) {
-                summ+=nums[i];
-            }
-
                 System.out.println(summ);}
 
-        }
+
         catch (FileNotFoundException e ){
             System.out.println("Файл не найден");
+        }
+        catch (IllegalArgumentException e){
+            System.out.println("Некоректный входной файл.");
         }
 
 
