@@ -15,7 +15,6 @@ public class Task1 {
             ;
         }
 
-
         String line = scanner.nextLine();
         String[] array = line.split(" ");
         int count = 0;
@@ -26,8 +25,8 @@ public class Task1 {
             count++;
 
         }
-        float d = summ / (float) count;
-        System.out.println(d);
+        double d = summ / (double) count;
+        System.out.printf(d + "  + %.3f", d);
     }
 
     public static void main(String[] args) {
