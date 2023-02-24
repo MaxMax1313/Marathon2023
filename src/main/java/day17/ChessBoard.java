@@ -3,8 +3,9 @@ package day17;
 import java.util.Arrays;
 
 public class ChessBoard {
-    ChessPiece [][] chessPieces = null;
-    ChessBoard(ChessPiece [][] chessPieces){
+    ChessPiece[][] chessPieces;
+
+    ChessBoard(ChessPiece[][] chessPieces) {
 
         this.chessPieces = chessPieces;
     }
@@ -20,8 +21,6 @@ public class ChessBoard {
 
         }
     }
-
-
 
 
 }
